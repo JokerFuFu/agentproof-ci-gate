@@ -1,0 +1,3 @@
+# HTTP-only candidate: no RPC, wallet, private key, or secret is required by its source.
+staging-settings:
+  rpcs: []

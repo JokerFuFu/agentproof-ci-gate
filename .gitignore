@@ -1,0 +1,8 @@
+node_modules/
+cre/node_modules/
+cre/artifacts/
+.local/
+.env
+*.lock.tmp
+tools/
+evidence/

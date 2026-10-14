@@ -1,0 +1,7 @@
+staging-settings:
+  user-workflow:
+    workflow-name: "agentproof-ci-gate-local-candidate"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.example.json"
+    secrets-path: ""

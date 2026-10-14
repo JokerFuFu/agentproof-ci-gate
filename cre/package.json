@@ -1,0 +1,9 @@
+{
+  "name": "agentproof-ci-gate-cre-source",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "typecheck": "tsc --noEmit", "test": "node --test tests/*.test.mjs", "build:js": "bun build-local.ts" },
+  "dependencies": { "@chainlink/cre-sdk": "1.23.0", "@noble/hashes": "2.2.0", "zod": "3.25.76" },
+  "devDependencies": { "typescript": "5.9.3" }
+}

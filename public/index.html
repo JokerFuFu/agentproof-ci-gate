@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123344">
+  <title>AgentProof · 未来验证实验室</title>
+  <link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body data-gate="idle">
+  <a class="skip-link" href="#verification-workspace">跳到验证操作</a>
+  <header class="topbar">
+    <a class="brand" href="/"><img src="/favicon.svg" alt="" width="38" height="38"><span>AgentProof <small>CI Gate</small></span></a>
+    <nav aria-label="页面导航"><a href="#verification-workspace">验证台</a><a href="#lab-guide">工作方式</a></nav>
+    <span class="local-badge"><span class="status-dot"></span>本地候选 / 未发布</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="lab-title">
+      <div class="hero-copy">
+        <div class="lab-wordmark"><span class="lab-spark" aria-hidden="true"></span>未来验证实验室</div>
+        <h1 id="lab-title">让每份交付，<br>穿过验证关卡。</h1>
+        <p class="hero-description">代理提交代码，CI 提供证据。<br>固定版本与策略之后，最后一个开关交给人。</p>
+        <div class="hero-links"><a class="enter-lab" href="#verification-workspace">进入验证台 <span aria-hidden="true">↘</span></a><span>代码交付 / 证据检查 / 人工决定</span></div>
+        <details id="lab-guide" class="lab-guide"><summary>这座实验室验证什么？</summary><p>核对固定仓库、commit、run/attempt、workflow 与必需检查，并检查时效和重放。通过只开放人工验收，不证明代码绝对安全。</p></details>
+      </div>
+      <figure class="lab-illustration">
+        <svg class="courier-art" viewBox="0 0 620 410" role="img" aria-labelledby="courier-title courier-desc">
+          <title id="courier-title">交付代理与证据扫描装置</title><desc id="courier-desc">原创机器人携带代码包走向扫描环，最后的人工开关保持独立。</desc>
+          <defs>
+            <linearGradient id="courier-shell" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f8fcfd"/><stop offset="1" stop-color="#bad7df"/></linearGradient>
+            <linearGradient id="courier-base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#24556b"/><stop offset="1" stop-color="#123344"/></linearGradient>
+            <linearGradient id="courier-lens" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#337c99"/><stop offset="1" stop-color="#173b50"/></linearGradient>
+            <linearGradient id="scan-glass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#93c8d5" stop-opacity=".05"/><stop offset=".55" stop-color="#93c8d5" stop-opacity=".28"/><stop offset="1" stop-color="#d8f1f4" stop-opacity=".04"/></linearGradient>
+            <filter id="lab-shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="9" flood-color="#173949" flood-opacity=".18"/></filter>
+          </defs>
+          <g class="lab-grid" fill="none" stroke="#b2c8cf" stroke-width="1" opacity=".6">
+            <path d="m72 330 299-173 236 137-299 173Z"/><path d="m119 302 235 137m-186-165 235 137m-187-165 236 137m-187-165 236 137m-187-165 236 137"/>
+            <path d="m112 353 299-173m-250 201 299-173m-250 201 298-173m-249 201 299-173"/>
+          </g>
+          <ellipse cx="289" cy="347" rx="168" ry="28" fill="#99b8c4" opacity=".22"/>
+          <g filter="url(#lab-shadow)">
+            <path d="m327 310 152-86 92 53-152 87Z" fill="#183e51"/>
+            <path d="m327 310 92 54v16l-92-53Z" fill="#123344"/>
+            <path d="m419 364 152-87v16l-152 87Z" fill="#2c5b70"/>
+            <path d="m344 309 133-76 75 44-133 77Z" fill="#89adbd"/>
+            <path d="m381 294 103-60 29 17-104 60Z" fill="#b9d4dd"/>
+            <path d="m482 91 14 5v201l-14 9Z" fill="#264d64"/>
+            <ellipse cx="434" cy="202" rx="79" ry="123" transform="rotate(-15 434 202)" fill="none" stroke="#284d63" stroke-width="23"/>
+            <ellipse cx="424" cy="198" rx="79" ry="123" transform="rotate(-15 424 198)" fill="url(#scan-glass)" stroke="#d6e7eb" stroke-width="14"/>
+            <ellipse class="ring-status" cx="424" cy="198" rx="70" ry="113" transform="rotate(-15 424 198)" fill="none" stroke="#67a7bf" stroke-width="3" stroke-dasharray="60 20 8 20"/>
+            <path d="M409 87 425 81M361 117l-11-7m-15 123-16 3m44 80-8 13m93-14 11 8m33-124 15-4" stroke="#123344" stroke-width="5" stroke-linecap="round"/>
+            <g class="scanner-beam" opacity=".2"><path d="m367 151 108-3 4 102-110-7Z" fill="#b1eff0"/><path d="m369 190 108 3" stroke="#eefeff" stroke-width="3"/></g>
+          </g>
+          <g class="courier-body" filter="url(#lab-shadow)">
+            <path d="m177 280-10 45 31 6 16-41" fill="#21495f"/><path d="m226 275 7 47 31-2-9-49" fill="#285f75"/>
+            <path d="m155 324 30-4 25 12-7 14-54-6Z" fill="#e4f0f4" stroke="#143b50" stroke-width="3"/>
+            <path d="m230 321 30-7 29 11-3 14-55 7Z" fill="#c3dce5" stroke="#143b50" stroke-width="3"/>
+            <rect x="154" y="171" width="108" height="123" rx="42" fill="url(#courier-shell)" stroke="#28586f" stroke-width="3"/>
+            <path d="M240 182c20 14 19 68 0 85" fill="none" stroke="#86a9bb" stroke-width="10"/>
+            <path d="m157 198-27 29 7 40" fill="none" stroke="#21495f" stroke-width="18" stroke-linecap="round"/>
+            <circle cx="133" cy="267" r="13" fill="#d1e4ec" stroke="#28586f" stroke-width="3"/>
+            <path d="m257 203 37 33 28-10" fill="none" stroke="#244e64" stroke-width="18" stroke-linecap="round"/>
+            <circle cx="296" cy="234" r="10" fill="#c9e0e6" stroke="#28586f" stroke-width="3"/>
+            <path d="m186 181 41-2" stroke="#6e98ab" stroke-width="5"/>
+            <rect x="172" y="201" width="59" height="48" rx="10" fill="#2b5e76"/>
+            <path d="m186 218-7 7 7 7m29-14 7 7-7 7m-14-16-6 23" fill="none" stroke="#d8f4ed" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="188" cy="267" r="4" fill="#427c96"/><path d="m203 266 22-1" stroke="#8aafbf" stroke-width="3" stroke-linecap="round"/>
+            <path d="m162 124-13 9 3 32 15 7m96-58 12 8-1 33-14 8" fill="#a6c8d4" stroke="#28586f" stroke-width="3"/>
+            <rect x="148" y="90" width="121" height="91" rx="32" transform="rotate(-5 208 135)" fill="url(#courier-shell)" stroke="#28586f" stroke-width="3"/>
+            <rect x="159" y="107" width="98" height="47" rx="20" transform="rotate(-5 208 130)" fill="url(#courier-lens)"/>
+            <g fill="#beece8"><rect x="178" y="121" width="11" height="15" rx="5" transform="rotate(-5 184 128)"/><rect x="224" y="117" width="11" height="15" rx="5" transform="rotate(-5 229 124)"/></g>
+            <path d="m200 145 18-1" stroke="#b9dadf" stroke-width="2" stroke-linecap="round"/>
+            <path d="m207 92-2-20" stroke="#28586f" stroke-width="4"/><circle cx="204" cy="67" r="7" fill="#d1aa65" stroke="#28586f" stroke-width="2"/>
+          </g>
+          <g class="code-packet" filter="url(#lab-shadow)">
+            <path d="m307 199 30-17 38 22-31 17Z" fill="#f5fbfc" stroke="#32617a" stroke-width="2"/>
+            <path d="m307 199 37 22v36l-37-22Z" fill="#98c7d4" stroke="#32617a" stroke-width="2"/>
+            <path d="m344 221 31-17v36l-31 17Z" fill="#3f819d" stroke="#32617a" stroke-width="2"/>
+            <path d="m318 213-5 3 5 8m13-4 5 8-5 3m-8-17 4 18" fill="none" stroke="#164659" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <g class="evidence-slips" fill="#f4fafc" stroke="#6b98ae" stroke-width="1.5">
+            <path d="m339 82 30-17 33 19v34l-30 18-33-19Z"/><path d="m354 93 17 9 16-9m-29 16 12 7m-12 0 10 6" fill="none" stroke="#418399" stroke-width="2"/>
+            <path d="m505 77 29-15 29 17v37l-29 16-29-18Z"/><path d="m516 91 9 5 13-7m-19 19 24-13" fill="none" stroke="#356d86" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+          <g class="manual-switch" filter="url(#lab-shadow)">
+            <path d="m502 265 35-20 38 22v52l-35 20-38-22Z" fill="#d7e8eb" stroke="#345c70" stroke-width="2"/>
+            <path d="m537 288 38-21v52l-35 20Z" fill="#7fa6b7"/>
+            <path d="m514 281 11 6v23l-11-6Z" fill="#d1aa65" stroke="#2b566b" stroke-width="2"/>
+            <path d="m516 303 10-6" stroke="#1e4a60" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <g fill="none" stroke="#6d9db1" stroke-width="2" stroke-linecap="round"><path d="M294 161c7-18 16-30 26-34" stroke-dasharray="3 8"/><path d="m567 190 16 9m-8-14 1 19"/><path d="m104 203 13 7m-7-12 1 18"/></g>
+        </svg>
+        <figcaption><span>代理携带代码包</span><span>CI 检查证据</span><span>人作最终决定</span></figcaption>
+        <div class="illustration-status"><span class="status-dot"></span><span id="scene-status">关卡待启动</span><span>概念装置图</span></div>
+      </figure>
+    </section>
+    <div class="assurance-strip"><div><span class="assurance-mark" aria-hidden="true">◈</span><strong>来源是证据的一部分</strong><span>Fixture 明确标为合成数据</span></div><p>CRE <strong>compiled-only</strong><span>Simulation 未执行 / DON 未部署</span></p></div>
+    <div id="connection-error" class="alert error" role="alert" hidden></div>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden><span id="notice-text"></span><button id="dismiss-notice" aria-label="关闭提示">×</button></div>
+    <div id="verification-workspace" class="workspace">
+      <aside class="setup-panel" aria-label="交付控制台">
+        <div class="dock-heading"><span class="dock-symbol" aria-hidden="true">⌘</span><div><span class="equipment-label">交付舱</span><h2>准备一份交付</h2></div></div>
+        <p class="muted">先审阅固定策略，再送入验证装置。当前记录与新草稿互不覆盖。</p>
+        <fieldset class="source-choice"><legend>新请求的证据来源</legend>
+          <label><input type="radio" name="source" value="fixture" checked><span>Fixture 演示</span></label>
+          <label><input type="radio" name="source" value="github-rest"><span>公开 GitHub</span></label>
+        </fieldset>
+        <div id="fixture-controls">
+          <label class="field-label" for="scenario">选择验证情境</label>
+          <select id="scenario">
+            <option value="pass">全部必需检查通过</option><option value="failed-step">必需 step 失败</option>
+            <option value="old-commit">CI 来自旧 commit</option><option value="expired-evidence">CI 证据已过期</option>
+            <option value="wrong-repository">来自另一仓库</option><option value="wrong-workflow">workflow 文件被改动</option>
+            <option value="partial-jobs">job 列表不完整</option><option value="cancelled-run">CI run 已取消</option>
+            <option value="in-progress">CI run 尚未完成</option><option value="timeout">模拟读取超时</option>
+            <option value="interrupted">模拟读取中断</option><option value="short-expiry">8 秒验收窗口</option>
+          </select>
+          <p id="scenario-description" class="scenario-description"></p>
+          <div class="fixture-note"><span aria-hidden="true">◌</span>合成仓库与检查结果。不会调用 GitHub、CRE 或 DON。</div>
+          <dl id="draft-binding" class="binding-list"></dl>
+        </div>
+        <div id="github-controls" hidden>
+          <p class="live-note">只读公开 GitHub。先审核固定 commit 上的 workflow，再填写真实坐标；模板不能充当真实交付。</p>
+          <label class="field-label" for="policy-json">买方验收策略 JSON</label>
+          <textarea id="policy-json" rows="8" spellcheck="false" aria-describedby="json-help draft-feedback"></textarea>
+          <p id="json-help" class="muted small">固定完整 SHA、仓库 ID、run/attempt、workflow/blob 及精确 job/step 名称。</p>
+          <button id="validate-policy" class="quiet wide">检查输入并预览策略</button>
+          <p id="draft-feedback" class="draft-feedback" role="status"></p>
+        </div>
+        <button id="freeze" class="primary wide" disabled>审阅并冻结策略</button>
+        <p class="small muted role-note">本地角色演示：买方 local-buyer / 提交者 local-agent。人工决定没有钱包签名。</p>
+        <details class="saved-records" id="saved-records"><summary>本地交付记录<span id="request-count">0</span></summary>
+          <label class="field-label sr-only" for="history-search">搜索本地记录</label><input id="history-search" type="search" placeholder="搜索仓库、run 或 commit" autocomplete="off">
+          <label class="sr-only" for="history-filter">按状态筛选</label><select id="history-filter"><option value="all">全部状态</option><option value="awaiting_review">等待人工验收</option><option value="blocked">验收阻挡</option><option value="ended">已结束</option></select>
+          <div id="request-list" class="request-list"><p class="muted small">还没有交付记录。</p></div>
+        </details>
+        <div class="console-foot"><span aria-hidden="true">◉</span><span>每次冻结都是独立、可追溯的请求。</span></div>
+      </aside>
+      <section class="review-panel" aria-label="交付验收">
+        <div class="review-heading"><div><span class="equipment-label">验证台</span><h2 id="delivery-title">等待一份固定交付</h2><p id="delivery-subtitle" class="muted">准备策略，读取证据，作出人工决定。</p></div><span id="state-badge" class="badge neutral">未开始</span></div>
+        <div id="provenance" class="provenance"><div><strong id="source-label">Fixture / 合成证据</strong><span id="source-note">本地演示，不调用 GitHub、CRE 或 DON。</span></div><button id="source-detail" class="text-button" data-detail="evidence" disabled>来源说明</button></div>
+        <div class="apparatus">
+          <div class="apparatus-top"><span>固定交付经过两道关卡</span><span>CI 通过后，仍由人决定</span></div>
+          <svg class="apparatus-lines" viewBox="0 0 800 200" preserveAspectRatio="none" aria-hidden="true"><path d="M55 134H170V65H410V134H740" fill="none" stroke="#b0c6d0" stroke-width="2"/><path d="M120 155H300V90H520V155H700" fill="none" stroke="#cedce2" stroke-width="1" stroke-dasharray="4 6"/><circle cx="170" cy="65" r="5" fill="#5e8a9e"/><circle cx="410" cy="134" r="5" fill="#5e8a9e"/><circle cx="740" cy="134" r="5" fill="#5e8a9e"/></svg>
+          <ol class="gate-flow" aria-label="验收顺序">
+            <li id="stage-freeze"><span class="stage-number">1</span><div><strong>策略冻结</strong><small>仓库与 commit 固定</small></div><span class="stage-result">等待</span><span class="stage-port" aria-hidden="true"></span></li>
+            <li id="stage-ci"><span class="stage-number">2</span><div><strong>CI 证据门禁</strong><small>严格绑定与时效</small></div><span class="stage-result">等待</span><span class="stage-port" aria-hidden="true"></span></li>
+            <li id="stage-human"><span class="stage-number">3</span><div><strong>人工验收</strong><small>买方单独决定</small></div><span class="stage-result">未开放</span><span class="stage-port" aria-hidden="true"></span></li>
+          </ol>
+        </div>
+        <section id="result-message" class="result-message empty" aria-labelledby="result-title">
+          <div class="result-heading"><span id="result-symbol" class="result-symbol" aria-hidden="true">◇</span><div><h3 id="result-title">从一份固定交付开始</h3><p id="result-detail">先审阅策略，再读取 CI 证据。</p></div></div>
+          <div id="reading-feedback" hidden><progress id="read-progress" aria-label="正在等待外部证据返回"></progress><span id="reading-time"></span></div>
+          <div class="result-actions"><button id="check" class="primary" disabled hidden>读取 CI 证据</button><button id="next-action" class="primary">确认并冻结策略</button><button id="cancel" class="quiet" disabled hidden>取消请求</button><button id="new-request" class="text-button" hidden>准备新交付</button></div>
+          <p id="operation-feedback" class="operation-feedback" role="status" aria-live="polite"></p>
+        </section>
+        <div class="evidence-lenses" aria-label="证据摘要">
+          <button class="evidence-lens binding-lens" id="binding-card" data-detail="policy" disabled><span class="lens-heading"><span>交付绑定</span><span aria-hidden="true">↗</span></span><strong id="binding-value">完整版本尚未固定</strong><span id="binding-caption">冻结后比较预期与实际坐标</span><span id="binding-status" class="lens-status">等待策略</span></button>
+          <button class="evidence-lens" id="evidence-card" data-detail="evidence" disabled><span class="lens-heading"><span>已取得的证据</span><span aria-hidden="true">↗</span></span><strong id="evidence-value">尚未读取</strong><span id="evidence-caption">来源与实际 run 状态会保留</span><span id="evidence-status" class="lens-status">无快照</span></button>
+          <button class="evidence-lens" id="validity-card" data-detail="judgment" disabled><span class="lens-heading"><span>人工决定窗口</span><span aria-hidden="true">↗</span></span><strong id="validity-value">冻结后开始</strong><span id="validity-caption">请求和证据都必须在有效期内</span><span id="validity-status" class="lens-status">开关未开放</span></button>
+        </div>
+        <div class="record-tools"><button class="text-button" id="copy-commit" disabled>复制完整 commit</button><button class="text-button" id="view-evidence" data-detail="evidence" disabled>查看证据档案</button><button id="export" class="text-button" disabled>导出本地记录</button></div>
+        <section class="check-section"><div class="section-row"><div><h3>必需检查，一项也不能少</h3><p class="muted small">展开 job 查看固定 step 和实际结果</p></div><span id="check-summary" class="muted small">等待策略</span></div><div id="checks" class="check-table"><p class="empty-copy">冻结策略后，这里会列出买方要求的检查。未取得证据的项目不会显示通过。</p></div></section>
+        <section class="human-panel">
+          <svg class="human-key" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="31" fill="none" stroke="#7698a9"/><path d="m24 44 6-9 8 4 1-17c0-5 8-5 8 0v13l7-1 5 5-3 19H33Z" fill="#c8dedf" stroke="#92b8c4" stroke-width="2"/><circle cx="40" cy="40" r="38" fill="none" stroke="#355d71" stroke-dasharray="3 6"/></svg>
+          <div class="human-copy"><h3>最后一个开关，留给买方。</h3><p id="human-help">请先冻结策略并读取 CI 证据。</p><span class="small muted">CI 不证明代码绝对安全 / 本地人工记录</span></div>
+          <div class="decision-buttons"><button id="accept" class="accept" disabled>审阅并验收</button><button id="reject" class="quiet" disabled>拒绝交付</button></div>
+        </section>
+        <div class="bench-footer"><section class="timeline-section"><div class="section-row"><h3>最近事件</h3><button class="text-button" id="view-events" data-detail="record" disabled>完整记录</button></div><ol id="timeline" class="timeline"><li class="muted">冻结、读取和人工决定都会保留在本地。</li></ol></section><details class="replay-box"><summary>检查重放保护</summary><p>相同仓库/run/attempt 只能为一份请求开放验收。以下操作创建一份同坐标新请求，并主动重新核验。</p><button id="replay" class="quiet" disabled>复制同一 run 再核验</button></details></div>
+      </section>
+    </div>
+    <footer><span>AgentProof · 13 Oct 2026 本地新候选</span><span>CI 是验收前置条件。代码质量与安全仍需人工判断。</span></footer>
+  </main>
+  <dialog id="freeze-dialog" class="review-dialog" aria-labelledby="freeze-title">
+    <div class="dialog-heading"><div><span class="equipment-label">冻结前审阅</span><h2 id="freeze-title">确认这份固定策略</h2></div><button class="dialog-close" data-close="freeze-dialog" aria-label="关闭策略审阅">×</button></div>
+    <div class="dialog-content"><div id="freeze-provenance" class="dialog-provenance"></div><p id="freeze-intent" class="dialog-intro"></p><div id="freeze-summary"></div><div id="freeze-error" class="alert error" role="alert" hidden></div><label class="review-ack"><input id="policy-ack" type="checkbox"><span>我确认这些固定坐标和必需检查。冻结后修改需要新请求。</span></label></div>
+    <div class="dialog-footer"><button id="freeze-back" class="quiet" data-close="freeze-dialog">返回调整</button><button id="confirm-freeze" class="primary" disabled>确认冻结策略</button></div>
+  </dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title">
+    <div class="dialog-heading"><div><span class="equipment-label">固定交付档案</span><h2 id="detail-title">证据详情</h2></div><button class="dialog-close" data-close="detail-dialog" aria-label="关闭证据详情">×</button></div>
+    <div class="dossier-context"><strong id="detail-repository"></strong><span id="detail-request"></span><span id="detail-source" class="source-pill"></span></div>
+    <div class="dossier-tabs" role="tablist" aria-label="档案内容"><button id="tab-policy" role="tab" aria-controls="detail-panel" data-tab="policy">策略</button><button id="tab-evidence" role="tab" aria-controls="detail-panel" data-tab="evidence">证据</button><button id="tab-judgment" role="tab" aria-controls="detail-panel" data-tab="judgment">判断依据</button><button id="tab-record" role="tab" aria-controls="detail-panel" data-tab="record">事件记录</button></div>
+    <div id="detail-panel" class="dialog-content dossier-panel" role="tabpanel" tabindex="0"></div>
+    <div class="dialog-footer"><span class="muted small">本地记录，不是 DON 签名报告</span><button class="quiet" data-close="detail-dialog">返回验证台</button></div>
+  </dialog>
+  <dialog id="decision-dialog" class="review-dialog" aria-labelledby="decision-title">
+    <div class="dialog-heading"><div><span class="equipment-label">独立人工决定</span><h2 id="decision-title">审阅后记录验收</h2></div><button class="dialog-close" data-close="decision-dialog" aria-label="关闭人工决定">×</button></div>
+    <div class="dialog-content"><div id="decision-provenance" class="dialog-provenance"></div><div id="decision-summary"></div><div id="decision-checklist"><label class="review-ack"><input id="code-ack" type="checkbox"><span>我已审阅此完整 commit 的代码和实际交付。</span></label><label class="review-ack"><input id="risk-ack" type="checkbox"><span>我理解 CI 只满足固定前置条件，不能证明代码绝对安全。</span></label></div><div id="decision-live" class="decision-live" role="status" aria-live="polite"></div><div id="decision-error" class="alert error" role="alert" hidden></div></div>
+    <div class="dialog-footer"><button class="quiet" data-close="decision-dialog">返回继续审阅</button><button id="confirm-decision" class="accept" disabled>确认本地验收</button></div>
+  </dialog>
+</body>
+</html>

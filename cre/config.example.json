@@ -1,0 +1,35 @@
+{
+  "schedule": "0 */5 * * * *",
+  "requestId": "27a84710-d9a0-4af7-bc32-56ead4f96c04",
+  "policy": {
+    "version": 1,
+    "repository": "demo-buyer/agent-delivery",
+    "repositoryId": 42424242,
+    "commit": "b8c4474af08d432d9fe7ca0d8de045781d92c614",
+    "runId": 9001001,
+    "runAttempt": 1,
+    "workflowId": 810001,
+    "workflowPath": ".github/workflows/acceptance.yml",
+    "workflowBlobSha": "1091f425fe16b95b64f8b2a12ca82347eaad5984",
+    "branch": "delivery/ci-gate",
+    "event": "push",
+    "requiredJobs": [
+      {
+        "name": "unit-tests",
+        "steps": [
+          "Run unit tests"
+        ]
+      },
+      {
+        "name": "dependency-check",
+        "steps": [
+          "Check dependencies"
+        ]
+      }
+    ],
+    "notBeforeMs": 1791884700000,
+    "maxEvidenceAgeSeconds": 900,
+    "requestTtlSeconds": 3600
+  },
+  "policyHash": "9c5656f1d80efd6733888c12f61ab588786027530d3365100be6e422a15da7a8"
+}

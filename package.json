@@ -1,0 +1,13 @@
+{
+  "name": "agentproof-ci-gate-local",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check-syntax.mjs",
+    "probe:github": "node scripts/probe-github.mjs"
+  }
+}
