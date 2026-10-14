@@ -53,7 +53,7 @@ HTTP receipts retain only safe allowlisted headers and bounded diagnostics. The 
 | `application-tests` | `Checkout application source`; `Prepare Node for application tests`; `Verify application commit`; `Run application tests` |
 | `source-checks` | `Checkout source checks`; `Prepare Node for syntax checks`; `Verify syntax commit`; `Run syntax checks` |
 
-The first public Actions run must be inspected through its terminal status and full job logs before treating it as real evidence. Workflow source alone is not an execution receipt. See [Actions](https://github.com/JokerFuFu/agentproof-ci-gate/actions) and [verification scope](docs/VALIDATION.md).
+Each public Actions run must be inspected through its terminal status and full job logs before treating it as real evidence. The [first recorded real CI demo](docs/LIVE-CI-DEMO.md) passed the gate and then received a separate local demo decision. Workflow source alone is not an execution receipt. See [Actions](https://github.com/JokerFuFu/agentproof-ci-gate/actions) and [verification scope](docs/VALIDATION.md).
 
 ## CRE execution status
 
